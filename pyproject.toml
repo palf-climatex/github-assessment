@@ -1,0 +1,22 @@
+[project]
+name = "github-access"
+version = "0.1.0"
+description = "GitHub repository access checker"
+requires-python = ">=3.8"
+dependencies = [
+    "PyGithub==2.1.1",
+    "python-dotenv==1.0.0",
+    "tqdm>=4.66.0",
+]
+
+[project.scripts]
+github-access = "github_access.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.4.0"
+] 
