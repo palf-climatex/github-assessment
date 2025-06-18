@@ -13,17 +13,10 @@ def main():
     org_name = "climate-x-org"
 
     access_info = get_repo_access(github_token, org_name)
-    print(access_info)
 
     with open(f"{org_name}_access.json", "w") as f:
         json.dump(access_info, f, indent=2)
         print(f"\nOutput written to {org_name}_access.json")
-
-    for repo, access_list in access_info.items():
-        print(f'\nRepository: {repo}')
-
-        for access_type, name in access_list:
-            print(f'  - {access_type}: {name}')
 
 if __name__ == '__main__':
     main()
